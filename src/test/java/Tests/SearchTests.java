@@ -1,5 +1,6 @@
 package Tests;
 
+import PageObjects.LandingPagePO;
 import PageObjects.OfferPO;
 import PageObjects.SearchResultsPO;
 import TestComponents.TestBase;
@@ -26,7 +27,7 @@ public class SearchTests extends TestBase {
 
         Assert.assertTrue(offerTitleText.contains("Audi " + "RS6"));
 
-        //add chaining, data from resources
+        // read data from json file
 
     }
 

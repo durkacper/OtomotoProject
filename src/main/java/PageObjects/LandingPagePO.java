@@ -37,31 +37,42 @@ public class LandingPagePO extends BasePO {
     @FindBy(css = "button[data-testid='submit-btn']")
     WebElement showOffersButton;
 
+    @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[1]/div/input")
+    WebElement productionYearFromWindow;
 
-    public void cookiesAccept() {
+    @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[2]/div/input")
+    WebElement productionYearToWindow;
+
+
+    public LandingPagePO cookiesAccept() {
         waitForWebElementToAppear(cookiesAcceptButton);
         cookiesAcceptButton.click();
+        return this;
     }
 
-    public void selectCarBrand(String carBrand) {
+    public LandingPagePO selectCarBrand(String carBrand) {
         carBrandWindow.sendKeys(carBrand);
         selectedCarBrand.click();
+        return this;
     }
 
-    public void selectCarModel(String carModel){
+    public LandingPagePO selectCarModel(String carModel) {
         carModelWindow.sendKeys(carModel);
         selectedCarModel.click();
+        return this;
     }
 
-    public void selectCarProductionYearFrom(String yearFrom){
+    public void selectCarProductionYearFrom(String yearFrom) {
+        productionYearFromWindow.sendKeys(yearFrom);
     }
 
-    public void selectCarProductionYearTo(String yearTo){
+    public void selectCarProductionYearTo(String yearTo) {
+        productionYearToWindow.sendKeys(yearTo);
     }
 
-    public SearchResultsPO searchForOffers(){
+    public SearchResultsPO searchForOffers() {
         showOffersButton.click();
-        SearchResultsPO searchResultsPO= new SearchResultsPO(driver);
+        SearchResultsPO searchResultsPO = new SearchResultsPO(driver);
         return searchResultsPO;
     }
 
