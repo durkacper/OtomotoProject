@@ -18,6 +18,15 @@ public class SearchResultsPO extends BasePO {
         this.driver = driver;
     }
 
+    @FindBy(xpath = "//main[@data-testid='search-results']/article[1]")
+    WebElement firstOfferInResults;
+
+
+    public void openFirstOfferInResults(){
+        waitForWebElementToAppear(firstOfferInResults);
+        firstOfferInResults.click();
+    }
+
 
 
 

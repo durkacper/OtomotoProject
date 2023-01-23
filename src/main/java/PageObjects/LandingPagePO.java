@@ -31,6 +31,9 @@ public class LandingPagePO extends BasePO {
     @FindBy(xpath = "//div[@data-testid='dropdown']/ul/li[2]")
     WebElement selectedCarBrand;
 
+    @FindBy(xpath = "//div[@data-testid='dropdown']/ul/li")
+    WebElement selectedCarModel;
+
     @FindBy(css = "button[data-testid='submit-btn']")
     WebElement showOffersButton;
 
@@ -47,6 +50,7 @@ public class LandingPagePO extends BasePO {
 
     public void selectCarModel(String carModel){
         carModelWindow.sendKeys(carModel);
+        selectedCarModel.click();
     }
 
     public void selectCarProductionYearFrom(String yearFrom){

@@ -1,5 +1,6 @@
 package Tests;
 
+import PageObjects.OfferPO;
 import PageObjects.SearchResultsPO;
 import TestComponents.TestBase;
 import org.testng.Assert;
@@ -11,15 +12,21 @@ public class SearchTests extends TestBase {
 
     //test 1
     @Test
-    public void searchCarByBrandAndModelTest() throws InterruptedException {
+    public void searchCarByBrandAndModelTest() {
 
         landingPagePO.goToLandingPage();
         landingPagePO.cookiesAccept();
         landingPagePO.selectCarBrand("Audi");
         landingPagePO.selectCarModel("RS6");
-//        landingPagePO.searchForOffers();
         SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
+        searchResultsPO.openFirstOfferInResults();
+        OfferPO offerPO = new OfferPO(driver);
+        offerPO.getOfferTitle();
+        String offerTitleText = offerPO.getOfferTitle();
 
+        Assert.assertTrue(offerTitleText.contains("Audi " + "RS6"));
+
+        //add chaining, data from resources
 
     }
 
