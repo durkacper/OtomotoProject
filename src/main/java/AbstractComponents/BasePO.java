@@ -23,7 +23,7 @@ public class BasePO {
     }
 
     public void waitForElementToBeClickable(WebElement findBy){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(findBy));
     }
 

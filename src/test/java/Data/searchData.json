@@ -1,6 +1,9 @@
 [
   {
     "brand": "Audi",
-    "model": "RS6"
+    "model": "RS6",
+    "yearFrom": "2020",
+    "yearTo": "2020",
+    "damageOption": "Tak"
   }
 ]

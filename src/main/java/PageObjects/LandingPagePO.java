@@ -1,6 +1,7 @@
 package PageObjects;
 
 import AbstractComponents.BasePO;
+import com.beust.ah.A;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,23 +44,30 @@ public class LandingPagePO extends BasePO {
     @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[2]/div/input")
     WebElement productionYearToWindow;
 
+    @FindBy(css = "button[data-testid='advanced-search-link']")
+    WebElement advancedSearchButton;
 
-    public LandingPagePO cookiesAccept() {
+
+
+    public AdvancedSearchPO goToAdvancedSearch(){
+        advancedSearchButton.click();
+        AdvancedSearchPO advancedSearchPO = new AdvancedSearchPO(driver);
+        return advancedSearchPO;
+    }
+
+    public void cookiesAccept() {
         waitForWebElementToAppear(cookiesAcceptButton);
         cookiesAcceptButton.click();
-        return this;
     }
 
-    public LandingPagePO selectCarBrand(String carBrand) {
+    public void selectCarBrand(String carBrand) {
         carBrandWindow.sendKeys(carBrand);
         selectedCarBrand.click();
-        return this;
     }
 
-    public LandingPagePO selectCarModel(String carModel) {
+    public void selectCarModel(String carModel) {
         carModelWindow.sendKeys(carModel);
         selectedCarModel.click();
-        return this;
     }
 
     public void selectCarProductionYearFrom(String yearFrom) {

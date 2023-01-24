@@ -1,9 +1,11 @@
 package Tests;
 
+import PageObjects.AdvancedSearchPO;
 import PageObjects.LandingPagePO;
 import PageObjects.OfferPO;
 import PageObjects.SearchResultsPO;
 import TestComponents.TestBase;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,15 +22,13 @@ public class SearchTests extends TestBase {
         landingPagePO.selectCarBrand("Audi");
         landingPagePO.selectCarModel("RS6");
         SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
-        searchResultsPO.openFirstOfferInResults();
-        OfferPO offerPO = new OfferPO(driver);
-        offerPO.getOfferTitle();
+        OfferPO offerPO = searchResultsPO.openFirstOfferInResults();
         String offerTitleText = offerPO.getOfferTitle();
 
         Assert.assertTrue(offerTitleText.contains("Audi " + "RS6"));
 
         // read data from json file
-
+        // add description
     }
 
 
@@ -38,9 +38,33 @@ public class SearchTests extends TestBase {
 
         landingPagePO.goToLandingPage();
         landingPagePO.cookiesAccept();
-        landingPagePO.selectCarProductionYearFrom("2000");
-        landingPagePO.selectCarProductionYearTo("2008");
-        landingPagePO.searchForOffers();
+        landingPagePO.selectCarProductionYearFrom("2020");
+        landingPagePO.selectCarProductionYearTo("2020");
+        SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
+        OfferPO offerPO = searchResultsPO.openFirstOfferInResults();
+        String carProductionYearText = offerPO.getCarProductionYear();
+
+        Assert.assertEquals(carProductionYearText, "2020");
+
+        // read data from json file
+        // add description
+    }
+
+
+    //test 3
+    @Test
+    public void advancedSearchForCarsWithVIN(){
+        landingPagePO.goToLandingPage();
+        landingPagePO.cookiesAccept();
+        AdvancedSearchPO advancedSearchPO = landingPagePO.goToAdvancedSearch();
+        advancedSearchPO.goToCarStatusSearch();
+        advancedSearchPO.selectDamageRadioButton("Tak");
+        SearchResultsPO searchResultsPO = advancedSearchPO.goToResults();
+        OfferPO offerPO = searchResultsPO.openFirstOfferInResults();
+
+
+
+
 
 
     }

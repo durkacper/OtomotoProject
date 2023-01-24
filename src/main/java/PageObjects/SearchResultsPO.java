@@ -22,26 +22,39 @@ public class SearchResultsPO extends BasePO {
     WebElement firstOfferInResults;
 
 
-    public void openFirstOfferInResults(){
+    public OfferPO openFirstOfferInResults(){
         waitForWebElementToAppear(firstOfferInResults);
         firstOfferInResults.click();
+        OfferPO offerPO = new OfferPO(driver);
+        return offerPO;
     }
 
 
 
 
 
+// Random select
 
-
-//    @FindBy(css = "h2[data-testid='ad-title']")
-//    List<WebElement> offersTitlesList;
-//
-//    public List<String> getOffersTitleText() {
-//        for (int i = 0; i < offersTitlesList.size(); i++) {
-//            String titleText = offersTitlesList.get(i).getText();
-//        }
-//        return null;
+//public void selectRandomCommand() {
+//    Select commandSelect = new Select(commands);
+//    List<WebElement> commandsOptions = commandSelect.getOptions();
+//    int howManyOption = getRandomNumber(commandsOptions.size());
+//    for (int i = 0; i < howManyOption; i++) {
+//        commandSelect.selectByIndex(i);
 //    }
+//}
+//
+//
+//    public void selectRandomContinent() {
+//        Select continents = new Select(selectContinents);
+//        List<WebElement> continentsOptions = continents.getOptions();
+//        continentsOptions.remove(0);
+//        WebElement randomOption = getRandomElement(continentsOptions);
+//        continents.selectByVisibleText(randomOption.getText());
+//    }
+
+
+
 
 
 }
