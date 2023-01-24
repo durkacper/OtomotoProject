@@ -18,7 +18,7 @@ public class AdvancedSearchPO extends BasePO {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "//div[@data-testid='grouped-filters']/div/div[2]/div")
+    @FindBy(xpath = "(//div[@data-testid='modal-toggler'])[2]")
     WebElement carStatusButton;
 
     @FindBy(xpath = "//div[@data-testid='modal-backdrop']/div/div[2]/div/div[3]/label")
@@ -38,15 +38,15 @@ public class AdvancedSearchPO extends BasePO {
     }
 
 
-    public SearchResultsPO goToResults() {
+    public AdvancedSearchResultsPO goToResults() {
         showResultsButton.click();
-        SearchResultsPO searchResultsPO = new SearchResultsPO(driver);
-        return searchResultsPO;
+        AdvancedSearchResultsPO advancedSearchResultsPO = new AdvancedSearchResultsPO(driver);
+        return advancedSearchResultsPO;
     }
 
 
     public void goToCarStatusSearch() {
-        waitForWebElementToAppear(carStatusButton);
+        waitForElementToBeClickable(carStatusButton);
         carStatusButton.click();
     }
 

@@ -47,6 +47,17 @@ public class LandingPagePO extends BasePO {
     @FindBy(css = "button[data-testid='advanced-search-link']")
     WebElement advancedSearchButton;
 
+    @FindBy(css = "a[data-testid='usermenu-link-login']")
+    WebElement loginButton;
+
+
+
+
+    public LoginPO goToLoginPage(){
+        loginButton.click();
+        LoginPO loginPO = new LoginPO(driver);
+        return loginPO;
+    }
 
 
     public AdvancedSearchPO goToAdvancedSearch(){

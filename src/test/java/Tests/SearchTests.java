@@ -1,9 +1,6 @@
 package Tests;
 
-import PageObjects.AdvancedSearchPO;
-import PageObjects.LandingPagePO;
-import PageObjects.OfferPO;
-import PageObjects.SearchResultsPO;
+import PageObjects.*;
 import TestComponents.TestBase;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.testng.Assert;
@@ -53,19 +50,18 @@ public class SearchTests extends TestBase {
 
     //test 3
     @Test
-    public void advancedSearchForCarsWithVIN(){
+    public void advancedSearchForDamagedCars(){
+
         landingPagePO.goToLandingPage();
         landingPagePO.cookiesAccept();
         AdvancedSearchPO advancedSearchPO = landingPagePO.goToAdvancedSearch();
         advancedSearchPO.goToCarStatusSearch();
         advancedSearchPO.selectDamageRadioButton("Tak");
-        SearchResultsPO searchResultsPO = advancedSearchPO.goToResults();
-        OfferPO offerPO = searchResultsPO.openFirstOfferInResults();
+        AdvancedSearchResultsPO advancedSearchResultsPO = advancedSearchPO.goToResults();
+        OfferPO offerPO = advancedSearchResultsPO.openFirstOfferInAdvancedResults();
+        String carDamageStatusText = offerPO.getCarDamageStatus();
 
-
-
-
-
+        Assert.assertEquals(carDamageStatusText, "Tak");
 
     }
 

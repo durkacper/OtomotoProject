@@ -26,7 +26,7 @@ public class OfferPO extends BasePO {
     @FindBy(xpath = "//div[@class='parametersArea']/div/ul[1]/li[8]/div") //needs to be modified because details are in different order per offer...
     WebElement productionYear;
 
-    @FindBy(css = ".offer-params li span")
+    @FindBy(css = ".offer-params li")
     List<WebElement> detailNameList;
 
     @FindBy(css = ".offer-params li div")
@@ -34,15 +34,28 @@ public class OfferPO extends BasePO {
 
 
     public String getCarProductionYear() {
-        for (int i = 0; i < detailNameList.size(); i++) {                   //maybe fori in fori ???
-            detailNameList.get(i).getText();
-            if (detailNameList.get(i).equals("Rok produkcji")) {
-                detailValue.getText();
+        String carYear = null;
+        for (int i = 0; i < detailNameList.size(); i++) {
+            String detailNameText = detailNameList.get(i).getText();
+            if (detailNameText.contains("Rok produkcji")){
+                carYear = detailNameList.get(i).getText().substring(14, 18);
             }
         }
-        //return productionYear.getText();
-        return detailValue.getText();
+        return carYear;
     }
+
+    public String getCarDamageStatus(){
+        String carDamage = null;
+        for (int i = 0; i < detailNameList.size(); i++) {
+            String detailNameText = detailNameList.get(i).getText();
+            if (detailNameText.contains("Uszkodzony")){
+                carDamage = detailNameList.get(i).getText().substring(9,13);
+            }else System.out.println("No car damage information");
+            break;
+        }
+        return carDamage;
+    }
+
 
     public String getOfferTitle() {
         waitForWebElementToAppear(offerTitle);

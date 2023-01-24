@@ -23,7 +23,7 @@ public class SearchResultsPO extends BasePO {
 
 
     public OfferPO openFirstOfferInResults(){
-        waitForWebElementToAppear(firstOfferInResults);
+        waitForElementToBeClickable(firstOfferInResults);
         firstOfferInResults.click();
         OfferPO offerPO = new OfferPO(driver);
         return offerPO;
