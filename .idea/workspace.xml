@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7a7f9f2-5bc0-43cc-8177-2421006b7946" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/PageObjects/ObservedOffersPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AbstractComponents/BasePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AbstractComponents/BasePO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/MyAccountPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/MyAccountPO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/OfferPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/OfferPO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/SearchResultsPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/SearchResultsPO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestComponents/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestComponents/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674593024013</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1674656910117</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674656910117</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

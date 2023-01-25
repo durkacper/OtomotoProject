@@ -1,6 +1,7 @@
 package PageObjects;
 
 import AbstractComponents.BasePO;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -29,16 +30,18 @@ public class OfferPO extends BasePO {
     @FindBy(css = "div.favorite-wrapper")
     WebElement addToFavoritesButton;
 
-    @FindBy(css = "button[data-test='close-favourite-modal']")
+    @FindBy(css = "button[data-test='close-favourite-modal']")  // button[class='close']
     WebElement closeFavoriteModalButton;
 
 
-    public void closeFavoriteModal(){
-        closeFavoriteModalButton.click();
+    public void closeFavoriteModal() {
+        waitForElementToBeClickable(closeFavoriteModalButton);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click()", closeFavoriteModalButton);
     }
 
 
-    public void addToFavorites(){
+    public void addToFavorites() {
         addToFavoritesButton.click();
     }
 
@@ -47,20 +50,20 @@ public class OfferPO extends BasePO {
         String carYear = null;
         for (int i = 0; i < detailNameList.size(); i++) {
             String detailNameText = detailNameList.get(i).getText();
-            if (detailNameText.contains("Rok produkcji")){
+            if (detailNameText.contains("Rok produkcji")) {
                 carYear = detailNameList.get(i).getText().substring(14, 18);
             }
         }
         return carYear;
     }
 
-    public String getCarDamageStatus(){
+    public String getCarDamageStatus() {
         String carDamage = null;
         for (int i = 0; i < detailNameList.size(); i++) {
             String detailNameText = detailNameList.get(i).getText();
-            if (detailNameText.contains("Uszkodzony")){
-                carDamage = detailNameList.get(i).getText().substring(9,13);
-            }else System.out.println("No car damage information");
+            if (detailNameText.contains("Uszkodzony")) {
+                carDamage = detailNameList.get(i).getText().substring(9, 13);
+            } else System.out.println("No car damage information");
             break;
         }
         return carDamage;
@@ -72,7 +75,7 @@ public class OfferPO extends BasePO {
         return offerTitle.getText();
     }
 
-    public void closeAlert(){
+    public void closeAlert() {
         driver.switchTo().alert().dismiss();
     }
 
