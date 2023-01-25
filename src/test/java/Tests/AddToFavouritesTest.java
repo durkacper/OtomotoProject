@@ -22,9 +22,7 @@ public class AddToFavouritesTest extends TestBase {
         OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
         String offerTitle1 = offerPO.getOfferTitle();
         offerPO.addToFavorites();
-
         offerPO.closeFavoriteModal();
-
         ObservedOffersPO observedOffersPO = offerPO.goToObservedOffersPage();
         observedOffersPO.openObservedOffer();
         String offerTitle2 = offerPO.getOfferTitle();
