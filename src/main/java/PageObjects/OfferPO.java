@@ -23,14 +23,24 @@ public class OfferPO extends BasePO {
     @FindBy(css = "span.offer-title")
     WebElement offerTitle;
 
-    @FindBy(xpath = "//div[@class='parametersArea']/div/ul[1]/li[8]/div") //needs to be modified because details are in different order per offer...
-    WebElement productionYear;
-
     @FindBy(css = ".offer-params li")
     List<WebElement> detailNameList;
 
-    @FindBy(css = ".offer-params li div")
-    WebElement detailValue;
+    @FindBy(css = "div.favorite-wrapper")
+    WebElement addToFavoritesButton;
+
+    @FindBy(css = "button[data-test='close-favourite-modal']")
+    WebElement closeFavoriteModalButton;
+
+
+    public void closeFavoriteModal(){
+        closeFavoriteModalButton.click();
+    }
+
+
+    public void addToFavorites(){
+        addToFavoritesButton.click();
+    }
 
 
     public String getCarProductionYear() {
@@ -60,6 +70,10 @@ public class OfferPO extends BasePO {
     public String getOfferTitle() {
         waitForWebElementToAppear(offerTitle);
         return offerTitle.getText();
+    }
+
+    public void closeAlert(){
+        driver.switchTo().alert().dismiss();
     }
 
 

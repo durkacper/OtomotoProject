@@ -9,10 +9,11 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
 
+    //test 4
     @Test
     public void loginTest() {
 
-        landingPagePO.goToLandingPage();
+        landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
         LoginPO loginPO = landingPagePO.goToLoginPage();
         loginPO.enterEmail("otomototestuser@gazeta.pl");

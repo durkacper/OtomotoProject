@@ -14,7 +14,7 @@ public class SearchTests extends TestBase {
     @Test
     public void searchCarByBrandAndModelTest() {
 
-        landingPagePO.goToLandingPage();
+        landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
         landingPagePO.selectCarBrand("Audi");
         landingPagePO.selectCarModel("RS6");
@@ -33,7 +33,7 @@ public class SearchTests extends TestBase {
     @Test
     public void searchCarByProductionYear() {
 
-        landingPagePO.goToLandingPage();
+        landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
         landingPagePO.selectCarProductionYearFrom("2020");
         landingPagePO.selectCarProductionYearTo("2020");
@@ -52,7 +52,7 @@ public class SearchTests extends TestBase {
     @Test
     public void advancedSearchForDamagedCars(){
 
-        landingPagePO.goToLandingPage();
+        landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
         AdvancedSearchPO advancedSearchPO = landingPagePO.goToAdvancedSearch();
         advancedSearchPO.goToCarStatusSearch();

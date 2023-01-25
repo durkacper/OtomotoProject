@@ -90,12 +90,13 @@ public class LandingPagePO extends BasePO {
     }
 
     public SearchResultsPO searchForOffers() {
+        waitForElementToBeClickable(showOffersButton);
         showOffersButton.click();
         SearchResultsPO searchResultsPO = new SearchResultsPO(driver);
         return searchResultsPO;
     }
 
-    public void goToLandingPage() {
+    public void goToLandingPageURL() {
         driver.get("https://www.otomoto.pl/");
     }
 
