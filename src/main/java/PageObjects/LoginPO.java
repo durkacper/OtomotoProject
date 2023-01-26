@@ -25,6 +25,14 @@ public class LoginPO extends BasePO {
     @FindBy(css = "button[data-testid='sign-in-button']")
     WebElement loginButton;
 
+    @FindBy(css = "p[data-testid='generic-error-message']")
+    WebElement loginErrorMessage;
+
+
+    public String getLoginErrorMessageText(){
+        waitForWebElementToAppear(loginErrorMessage);
+        return loginErrorMessage.getText();
+    }
 
     public void enterEmail(String email){
         emailWindow.sendKeys(email);

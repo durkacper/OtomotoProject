@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7a7f9f2-5bc0-43cc-8177-2421006b7946" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/ErrorsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/LoginPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/LoginPO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/OfferPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/OfferPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Data/loginData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Data/loginData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +45,7 @@
     "last_opened_file_path": "C:/Users/durk/Downloads/LimfinityDemov3"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.AddToFavouritesTest.addOfferToFavourites">
+  <component name="RunManager" selected="TestNG.ErrorsTest.intentionalFailTest">
     <configuration name="AddToFavouritesTest.addOfferToFavourites" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
       <extension name="coverage">
@@ -60,7 +64,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.loginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ErrorsTest.intentionalFailTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
       <extension name="coverage">
         <pattern>
@@ -69,8 +73,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.LoginTest" />
-      <option name="METHOD_NAME" value="loginTest" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ErrorsTest" />
+      <option name="METHOD_NAME" value="intentionalFailTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -78,7 +82,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchTests.advancedSearchForDamagedCars" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ErrorsTest.loginWithInvalidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
       <extension name="coverage">
         <pattern>
@@ -87,8 +91,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.SearchTests" />
-      <option name="METHOD_NAME" value="advancedSearchForDamagedCars" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ErrorsTest" />
+      <option name="METHOD_NAME" value="loginWithInvalidCredentials" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ErrorsTest.setIncorrectCarPriceInSearch" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OtomotoProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ErrorsTest" />
+      <option name="METHOD_NAME" value="setIncorrectCarPriceInSearch" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -114,31 +136,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchTests.searchCarByProductionYear" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="OtomotoProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.SearchTests" />
-      <option name="METHOD_NAME" value="searchCarByProductionYear" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ErrorsTest.intentionalFailTest" />
+        <item itemvalue="TestNG.ErrorsTest.loginWithInvalidCredentials" />
+        <item itemvalue="TestNG.ErrorsTest.setIncorrectCarPriceInSearch" />
         <item itemvalue="TestNG.AddToFavouritesTest.addOfferToFavourites" />
         <item itemvalue="TestNG.SearchTests.searchCarByBrandAndModelTest" />
-        <item itemvalue="TestNG.LoginTest.loginTest" />
-        <item itemvalue="TestNG.SearchTests.advancedSearchForDamagedCars" />
-        <item itemvalue="TestNG.SearchTests.searchCarByProductionYear" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +197,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674656910117</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit">
+      <created>1674677214816</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674677214816</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit">
+      <created>1674677254236</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674677254236</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

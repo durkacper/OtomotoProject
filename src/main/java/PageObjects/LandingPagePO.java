@@ -44,13 +44,28 @@ public class LandingPagePO extends BasePO {
     @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[2]/div/input")
     WebElement productionYearToWindow;
 
+    @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[1]/ul/li")
+    WebElement productionYearFromOnList;
+
+    @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[2]/ul/li")
+    WebElement productionYearToOnList;
+
     @FindBy(css = "button[data-testid='advanced-search-link']")
     WebElement advancedSearchButton;
 
     @FindBy(css = "a[data-testid='usermenu-link-login']")
     WebElement loginButton;
 
+    @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[1]/div/div")
+    WebElement errorSymbol;
 
+
+
+
+
+    public Boolean checkIfErrorSymbolIsDisplayed(){
+        return errorSymbol.isDisplayed();
+    }
 
 
     public LoginPO goToLoginPage(){
@@ -83,10 +98,12 @@ public class LandingPagePO extends BasePO {
 
     public void selectCarProductionYearFrom(String yearFrom) {
         productionYearFromWindow.sendKeys(yearFrom);
+        productionYearFromOnList.click();
     }
 
     public void selectCarProductionYearTo(String yearTo) {
         productionYearToWindow.sendKeys(yearTo);
+        productionYearToOnList.click();
     }
 
     public SearchResultsPO searchForOffers() {

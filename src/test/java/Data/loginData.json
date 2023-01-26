@@ -2,5 +2,9 @@
   {
     "login": "otomototestuser@gazeta.pl",
     "pass": "Otomotopass123"
+  },
+  {
+    "invalidLogin": "badLogin@mail.com",
+    "invalidPass": "badPassword"
   }
 ]

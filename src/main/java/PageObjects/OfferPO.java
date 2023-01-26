@@ -30,8 +30,17 @@ public class OfferPO extends BasePO {
     @FindBy(css = "div.favorite-wrapper")
     WebElement addToFavoritesButton;
 
-    @FindBy(css = "button[data-test='close-favourite-modal']")  // button[class='close']
+    @FindBy(css = "button[data-test='close-favourite-modal']")
     WebElement closeFavoriteModalButton;
+
+    @FindBy(xpath = "//div[@class='offer-content__metabar']//span[@id='ad_id']")
+    WebElement offerID;
+
+
+    public String getOfferID(){
+        waitForWebElementToAppear(offerID);
+        return offerID.getText();
+    }
 
 
     public void closeFavoriteModal() {
