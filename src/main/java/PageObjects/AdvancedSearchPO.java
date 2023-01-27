@@ -41,7 +41,7 @@ public class AdvancedSearchPO extends BasePO {
 
     public SearchResultsPO goToResults() throws InterruptedException {
         waitForElementToBeClickable(showResultsButton);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         showResultsButton.click();
         SearchResultsPO searchResultsPO = new SearchResultsPO(driver);
         return searchResultsPO;

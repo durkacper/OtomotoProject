@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7a7f9f2-5bc0-43cc-8177-2421006b7946" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/ExtentReporterNG.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestComponents/Listeners.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testSuites/errorsTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testSuites/loginTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testSuites/searchTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testSuites/addToFavouritesTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AbstractComponents/BasePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AbstractComponents/BasePO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/AdvancedSearchPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/AdvancedSearchPO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/AdvancedSearchResultsPO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/SearchResultsPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/SearchResultsPO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Data/searchData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Data/searchData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestComponents/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestComponents/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ErrorsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ErrorsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testSuites/errorsTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/errorsTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testSuites/loginTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/loginTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testSuites/searchTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/searchTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,30 +42,33 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/durk/Desktop/OtomotoProject"
+    "last_opened_file_path": "C:/Users/durk/Desktop/OtomotoProject/testSuites"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\durk\Desktop\OtomotoProject\testSuites" />
       <recent name="C:\Users\durk\Desktop\OtomotoProject" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\durk\Desktop\OtomotoProject\testSuites" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/errorsTest.xml">
-    <configuration name="AddToFavouritesTest.addOfferToFavouritesTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/addToFavouritesTest.xml">
+    <configuration name="C:/Users/durk/Desktop/OtomotoProject/testSuites/addToFavouritesTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.AddToFavouritesTest" />
-      <option name="METHOD_NAME" value="addOfferToFavouritesTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/addToFavouritesTest.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/durk/Desktop/OtomotoProject/testSuites/advancedSearchTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OtomotoProject" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/advancedSearchTest.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -92,54 +85,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ErrorsTest.intentionalFailTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/durk/Desktop/OtomotoProject/testSuites/loginTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ErrorsTest" />
-      <option name="METHOD_NAME" value="intentionalFailTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/loginTest.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchTests.advancedSearchForDamagedCars" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/durk/Desktop/OtomotoProject/testSuites/searchTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.SearchTests" />
-      <option name="METHOD_NAME" value="advancedSearchForDamagedCars" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SearchTests.searchCarByProductionYear" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="OtomotoProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.SearchTests" />
-      <option name="METHOD_NAME" value="searchCarByProductionYear" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/searchTest.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -148,11 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/addToFavouritesTest.xml" />
+        <item itemvalue="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/searchTest.xml" />
+        <item itemvalue="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/loginTest.xml" />
+        <item itemvalue="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/advancedSearchTest.xml" />
         <item itemvalue="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/errorsTest.xml" />
-        <item itemvalue="TestNG.ErrorsTest.intentionalFailTest" />
-        <item itemvalue="TestNG.AddToFavouritesTest.addOfferToFavouritesTest" />
-        <item itemvalue="TestNG.SearchTests.advancedSearchForDamagedCars" />
-        <item itemvalue="TestNG.SearchTests.searchCarByProductionYear" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674734816005</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit">
+      <created>1674824592382</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674824592382</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Login Test Suite">
+<suite name="Add To Favourites Test Suite">
     <listeners>
         <listener class-name="TestComponents.Listeners"/>
     </listeners>
-    <test verbose="2" preserve-order="true" name="Login Test">
+    <test verbose="2" preserve-order="true" name="Add To Favourites Tests">
         <classes>
-            <class name="Tests.LoginTest">
+            <class name="Tests.AddToFavouritesTest">
                 <methods>
-                    <include name="loginTest"/>
+                    <include name="addOfferToFavouritesTest"/>
                 </methods>
             </class>
         </classes>

@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/durk/Desktop/OtomotoProject">
+<suite name="Search Test Suite">
+    <listeners>
+        <listener class-name="TestComponents.Listeners"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Search Test">
         <classes>
-            <class name="Tests.AddToFavouritesTest">
-                <methods>
-                    <include name="addOfferToFavouritesTest"/>
-                </methods>
-            </class>
-            <class name="Tests.ErrorsTest">
-                <methods>
-                    <include name="setIncorrectCarPriceInSearchTest"/>
-                    <include name="loginWithInvalidCredentialsTest"/>
-                    <include name="intentionalFailTest"/>
-                </methods>
-            </class>
-            <class name="Tests.LoginTest">
-                <methods>
-                    <include name="loginTest"/>
-                </methods>
-            </class>
             <class name="Tests.SearchTests">
                 <methods>
                     <include name="searchCarByBrandAndModelTest"/>

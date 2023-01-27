@@ -48,7 +48,7 @@ public class SearchTests extends TestBase {
 
 
     //test 3
-    @Test(dataProvider = "getSearchData")
+    @Test(dataProvider = "getSearchData", groups = {"advancedSearch"})
     public void advancedSearchForDamagedCars(HashMap<String, String> input) throws InterruptedException {
 
         landingPagePO.goToLandingPageURL();
