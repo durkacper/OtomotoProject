@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7a7f9f2-5bc0-43cc-8177-2421006b7946" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Data/DataReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/ExtentReporterNG.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestComponents/Listeners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testSuites/errorsTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testSuites/loginTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testSuites/searchTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AbstractComponents/BasePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AbstractComponents/BasePO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/AdvancedSearchPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/AdvancedSearchPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/AdvancedSearchResultsPO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/SearchResultsPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/SearchResultsPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Data/searchData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Data/searchData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestComponents/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestComponents/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ErrorsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ErrorsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +52,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/durk/Downloads/LimfinityDemov3"
+    "last_opened_file_path": "C:/Users/durk/Desktop/OtomotoProject"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.LoginTest.loginTest">
-    <configuration name="AddToFavouritesTest.addOfferToFavourites" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\durk\Desktop\OtomotoProject" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\durk\Desktop\OtomotoProject\testSuites" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/errorsTest.xml">
+    <configuration name="AddToFavouritesTest.addOfferToFavouritesTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
       <extension name="coverage">
         <pattern>
@@ -53,8 +74,18 @@
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.AddToFavouritesTest" />
-      <option name="METHOD_NAME" value="addOfferToFavourites" />
+      <option name="METHOD_NAME" value="addOfferToFavouritesTest" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/durk/Desktop/OtomotoProject/testSuites/errorsTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="OtomotoProject" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/errorsTest.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -79,7 +110,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ErrorsTest.loginWithInvalidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchTests.advancedSearchForDamagedCars" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
       <extension name="coverage">
         <pattern>
@@ -88,8 +119,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ErrorsTest" />
-      <option name="METHOD_NAME" value="loginWithInvalidCredentials" />
+      <option name="MAIN_CLASS_NAME" value="Tests.SearchTests" />
+      <option name="METHOD_NAME" value="advancedSearchForDamagedCars" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -97,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ErrorsTest.setIncorrectCarPriceInSearch" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchTests.searchCarByProductionYear" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
       <extension name="coverage">
         <pattern>
@@ -106,26 +137,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ErrorsTest" />
-      <option name="METHOD_NAME" value="setIncorrectCarPriceInSearch" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTest.loginTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="OtomotoProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.LoginTest" />
-      <option name="METHOD_NAME" value="loginTest" />
+      <option name="MAIN_CLASS_NAME" value="Tests.SearchTests" />
+      <option name="METHOD_NAME" value="searchCarByProductionYear" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -135,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTest.loginTest" />
+        <item itemvalue="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/errorsTest.xml" />
         <item itemvalue="TestNG.ErrorsTest.intentionalFailTest" />
-        <item itemvalue="TestNG.ErrorsTest.loginWithInvalidCredentials" />
-        <item itemvalue="TestNG.ErrorsTest.setIncorrectCarPriceInSearch" />
-        <item itemvalue="TestNG.AddToFavouritesTest.addOfferToFavourites" />
+        <item itemvalue="TestNG.AddToFavouritesTest.addOfferToFavouritesTest" />
+        <item itemvalue="TestNG.SearchTests.advancedSearchForDamagedCars" />
+        <item itemvalue="TestNG.SearchTests.searchCarByProductionYear" />
       </list>
     </recent_temporary>
   </component>

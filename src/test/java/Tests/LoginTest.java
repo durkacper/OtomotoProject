@@ -15,7 +15,7 @@ import java.util.List;
 public class LoginTest extends TestBase {
 
     //test 4
-    @Test(dataProvider = "getData")
+    @Test(dataProvider = "getLoginData")
     public void loginTest(HashMap<String, String> input) {
 
         landingPagePO.goToLandingPageURL();
@@ -31,7 +31,7 @@ public class LoginTest extends TestBase {
 
 
     @DataProvider
-    public Object[][] getData() throws IOException {
+    public Object[][] getLoginData() throws IOException {
 
         List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "/src/test/java/Data/loginData.json");
         return new Object[][]{{data.get(0)}};

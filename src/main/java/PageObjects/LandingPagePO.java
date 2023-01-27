@@ -98,11 +98,12 @@ public class LandingPagePO extends BasePO {
 
     public void selectCarProductionYearFrom(String yearFrom) {
         productionYearFromWindow.sendKeys(yearFrom);
-        productionYearFromOnList.click();
+//        productionYearFromOnList.click();
     }
 
     public void selectCarProductionYearTo(String yearTo) {
         productionYearToWindow.sendKeys(yearTo);
+        waitForElementToBeClickable(productionYearToOnList);
         productionYearToOnList.click();
     }
 

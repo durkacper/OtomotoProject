@@ -4,65 +4,73 @@ import PageObjects.*;
 import TestComponents.TestBase;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 public class SearchTests extends TestBase {
 
     //test 1
-    @Test
-    public void searchCarByBrandAndModelTest() {
+    @Test(dataProvider = "getSearchData")
+    public void searchCarByBrandAndModelTest(HashMap<String, String> input) {
 
         landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
-        landingPagePO.selectCarBrand("Audi");
-        landingPagePO.selectCarModel("RS6");
+        landingPagePO.selectCarBrand(input.get("brand"));
+        landingPagePO.selectCarModel(input.get("model"));
         SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
-        OfferPO offerPO = searchResultsPO.openFirstOfferInResults();
+        OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
         String offerTitleText = offerPO.getOfferTitle();
 
         Assert.assertTrue(offerTitleText.contains("Audi " + "RS6"));
 
-        // read data from json file
-        // add description
     }
 
 
     //test 2
-    @Test
-    public void searchCarByProductionYear() {
+    @Test(dataProvider = "getSearchData")
+    public void searchCarByProductionYear(HashMap<String, String> input) {
 
         landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
-        landingPagePO.selectCarProductionYearFrom("2020");
-        landingPagePO.selectCarProductionYearTo("2020");
+        landingPagePO.selectCarProductionYearFrom(input.get("yearFrom"));
+//        landingPagePO.selectCarProductionYearTo(input.get("yearTo"));
         SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
-        OfferPO offerPO = searchResultsPO.openFirstOfferInResults();
+        OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
         String carProductionYearText = offerPO.getCarProductionYear();
 
-        Assert.assertEquals(carProductionYearText, "2020");
+        Assert.assertEquals(carProductionYearText, "2023");
 
-        // read data from json file
-        // add description
     }
 
 
     //test 3
-    @Test
-    public void advancedSearchForDamagedCars(){
+    @Test(dataProvider = "getSearchData")
+    public void advancedSearchForDamagedCars(HashMap<String, String> input) throws InterruptedException {
 
         landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
         AdvancedSearchPO advancedSearchPO = landingPagePO.goToAdvancedSearch();
         advancedSearchPO.goToCarStatusSearch();
-        advancedSearchPO.selectDamageRadioButton("Tak");
-        AdvancedSearchResultsPO advancedSearchResultsPO = advancedSearchPO.goToResults();
-        OfferPO offerPO = advancedSearchResultsPO.openFirstOfferInAdvancedResults();
+        advancedSearchPO.selectDamageRadioButton(input.get("damageOption"));
+        SearchResultsPO searchResultsPO = advancedSearchPO.goToResults();
+        OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
+        offerPO.getCarDamageStatus();
         String carDamageStatusText = offerPO.getCarDamageStatus();
 
         Assert.assertEquals(carDamageStatusText, "Tak");
 
+    }
+
+
+    @DataProvider
+    public Object[][] getSearchData() throws IOException {
+
+        List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "/src/test/java/Data/searchData.json");
+        return new Object[][]{{data.get(0)}};
     }
 
 

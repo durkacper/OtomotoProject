@@ -3,18 +3,23 @@ package Tests;
 import PageObjects.LoginPO;
 import TestComponents.TestBase;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 
 public class ErrorsTest extends TestBase {
 
     //test 6
-    @Test
-    public void setIncorrectCarPriceInSearchTest() {
+    @Test(dataProvider = "getSearchLoginData")
+    public void setIncorrectCarPriceInSearchTest(HashMap<String, String> input) {
 
         landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
-        landingPagePO.selectCarProductionYearTo("2019");
-        landingPagePO.selectCarProductionYearFrom("2020");
+        landingPagePO.selectCarProductionYearFrom(input.get("yearFrom"));
+        landingPagePO.selectCarProductionYearTo(input.get("yearTo"));
         Boolean errorDisplay = landingPagePO.checkIfErrorSymbolIsDisplayed();
 
         Assert.assertEquals(Boolean.TRUE, errorDisplay);
@@ -23,14 +28,14 @@ public class ErrorsTest extends TestBase {
 
 
     //test 7
-    @Test
-    public void loginWithInvalidCredentialsTest(){
+    @Test(dataProvider = "getInvalidLoginData")
+    public void loginWithInvalidCredentialsTest(HashMap<String, String> input) {
 
         landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
         LoginPO loginPO = landingPagePO.goToLoginPage();
-        loginPO.enterEmail("badLogin@mail.com");
-        loginPO.enterPassword("invalidPass");
+        loginPO.enterEmail(input.get("invalidLogin"));
+        loginPO.enterPassword(input.get("invalidPass"));
         loginPO.pressLoginButton();
         String errorMessageText = loginPO.getLoginErrorMessageText();
 
@@ -40,19 +45,34 @@ public class ErrorsTest extends TestBase {
 
 
     //test 8
-    @Test
-    public void intentionalFailTest(){
+    @Test(dataProvider = "getInvalidLoginData")
+    public void intentionalFailTest(HashMap<String, String> input) {
 
         landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
         LoginPO loginPO = landingPagePO.goToLoginPage();
-        loginPO.enterEmail("badLogin@mail.com");
-        loginPO.enterPassword("invalidPass");
+        loginPO.enterEmail(input.get("invalidLogin"));
+        loginPO.enterPassword(input.get("invalidPass"));
         loginPO.pressLoginButton();
         String errorMessageText = loginPO.getLoginErrorMessageText();
 
         Assert.assertEquals(errorMessageText, "Wrong 'expected' to invoke failure");
 
+    }
+
+
+    @DataProvider
+    public Object[][] getInvalidLoginData() throws IOException {
+
+        List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "/src/test/java/Data/loginData.json");
+        return new Object[][]{{data.get(1)}};
+    }
+
+    @DataProvider
+    public Object[][] getSearchLoginData() throws IOException {
+
+        List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "/src/test/java/Data/searchData.json");
+        return new Object[][]{{data.get(1)}};
     }
 
 }

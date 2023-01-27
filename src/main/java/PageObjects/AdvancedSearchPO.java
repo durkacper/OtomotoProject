@@ -1,6 +1,7 @@
 package PageObjects;
 
 import AbstractComponents.BasePO;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +19,7 @@ public class AdvancedSearchPO extends BasePO {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "(//div[@data-testid='modal-toggler'])[2]")
+    @FindBy(xpath = "//div[@data-testid='grouped-filters']/div/div[2]/div[@role='button']")
     WebElement carStatusButton;
 
     @FindBy(xpath = "//div[@data-testid='modal-backdrop']/div/div[2]/div/div[3]/label")
@@ -38,15 +39,19 @@ public class AdvancedSearchPO extends BasePO {
     }
 
 
-    public AdvancedSearchResultsPO goToResults() {
+    public SearchResultsPO goToResults() throws InterruptedException {
+        waitForElementToBeClickable(showResultsButton);
+        Thread.sleep(2000);
         showResultsButton.click();
-        AdvancedSearchResultsPO advancedSearchResultsPO = new AdvancedSearchResultsPO(driver);
-        return advancedSearchResultsPO;
+        SearchResultsPO searchResultsPO = new SearchResultsPO(driver);
+        return searchResultsPO;
     }
 
 
     public void goToCarStatusSearch() {
         waitForElementToBeClickable(carStatusButton);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].scrollIntoView(false)", carStatusButton);
         carStatusButton.click();
     }
 

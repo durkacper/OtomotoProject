@@ -2,6 +2,7 @@ package PageObjects;
 
 import AbstractComponents.BasePO;
 import freemarker.template.Template;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,15 +29,11 @@ public class SearchResultsPO extends BasePO {
     List<WebElement> offersList;
 
 
-    public OfferPO openFirstOfferInResults() {
-        waitForElementToBeClickable(firstOfferInResults);
-        firstOfferInResults.click();
-        OfferPO offerPO = new OfferPO(driver);
-        return offerPO;
-    }
 
     public OfferPO openRandomOfferInResults() {
-        waitForWebElementToAppear(firstOfferInResults);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("return document.readyState").toString().equals("complete");
+        waitForElementToBeClickable(firstOfferInResults);
         Random random = new Random();
         int randomValue = random.nextInt(offersList.size());
         offersList.get(randomValue).click();

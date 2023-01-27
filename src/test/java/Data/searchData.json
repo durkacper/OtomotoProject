@@ -2,8 +2,12 @@
   {
     "brand": "Audi",
     "model": "RS6",
-    "yearFrom": "2020",
-    "yearTo": "2020",
+    "yearFrom": "2023",
+    "yearTo": "2022",
     "damageOption": "Tak"
+  },
+  {
+    "yearFrom": "2022",
+    "yearTo": "2019"
   }
 ]
