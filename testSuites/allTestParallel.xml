@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="All Tests Parallel Suite">
+    <listeners>
+        <listener class-name="TestComponents.Listeners"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Add To Favourite Tests">
+        <classes>
+            <class name="Tests.AddToFavouritesTest"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Error Tests">
+        <classes>
+            <class name="Tests.ErrorsTest"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Login Tests">
+        <classes>
+            <class name="Tests.LoginTest"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Search Tests">
+        <classes>
+            <class name="Tests.SearchTests"/>
+        </classes>
+    </test>
+</suite>

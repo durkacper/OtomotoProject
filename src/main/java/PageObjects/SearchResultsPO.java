@@ -22,11 +22,12 @@ public class SearchResultsPO extends BasePO {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "//main[@data-testid='search-results']/article[1]")
-    WebElement firstOfferInResults;
 
-    @FindBy(css = "article[data-variant='regular']")
+    @FindBy(css = "article[data-testid='listing-ad']")
     List<WebElement> offersList;
+
+    @FindBy(css = "article[data-variant='regular']:first-child")
+    WebElement firstOffer;
 
     @FindBy(css = "div[data-testid='search-loading-indicator']")
     WebElement loadingSpinner;
@@ -34,9 +35,10 @@ public class SearchResultsPO extends BasePO {
 
     public OfferPO openRandomOfferInResults() {
 
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("window.scrollBy(0,350)", "");
+        waitForWebElementToAppear(firstOffer);
         waitUntilElementDisappears(loadingSpinner);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("window.scrollBy(0,250)", "");
         Random random = new Random();
         int randomValue = random.nextInt(offersList.size());
         offersList.get(randomValue).click();
