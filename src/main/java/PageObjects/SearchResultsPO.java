@@ -28,20 +28,20 @@ public class SearchResultsPO extends BasePO {
     @FindBy(css = "article[data-variant='regular']")
     List<WebElement> offersList;
 
+    @FindBy(css = "div[data-testid='search-loading-indicator']")
+    WebElement loadingSpinner;
 
 
     public OfferPO openRandomOfferInResults() {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("return document.readyState").toString().equals("complete");
-        waitForElementToBeClickable(firstOfferInResults);
+
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("window.scrollBy(0,350)", "");
+        waitUntilElementDisappears(loadingSpinner);
         Random random = new Random();
         int randomValue = random.nextInt(offersList.size());
         offersList.get(randomValue).click();
         OfferPO offerPO = new OfferPO(driver);
         return offerPO;
     }
-
-
-
 
 }

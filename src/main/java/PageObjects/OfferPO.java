@@ -13,6 +13,7 @@ import java.util.List;
 public class OfferPO extends BasePO {
 
     WebDriver driver;
+    public String carDamage;
 
     public OfferPO(WebDriver driver) {
         super(driver);
@@ -24,9 +25,6 @@ public class OfferPO extends BasePO {
     @FindBy(css = "span.offer-title")
     WebElement offerTitle;
 
-    @FindBy(css = ".offer-params li")
-    List<WebElement> detailNameList;
-
     @FindBy(css = "div.favorite-wrapper")
     WebElement addToFavoritesButton;
 
@@ -36,8 +34,18 @@ public class OfferPO extends BasePO {
     @FindBy(xpath = "//div[@class='offer-content__metabar']//span[@id='ad_id']")
     WebElement offerID;
 
+    @FindBy(xpath = "//div[@class='offer-summary']/span[2]/span[1]")
+    WebElement productionYear;
 
-    public String getOfferID(){
+
+    @FindBy(xpath = "//div[@class='offer-params with-vin']/ul[2]/li/span")
+    List<WebElement> detailsNameList;
+
+    @FindBy(xpath = "//div[@class='offer-params with-vin']/ul[2]/li/div")
+    List<WebElement> detailsValueList;
+
+
+    public String getOfferID() {
         waitForWebElementToAppear(offerID);
         return offerID.getText();
     }
@@ -56,24 +64,16 @@ public class OfferPO extends BasePO {
 
 
     public String getCarProductionYear() {
-        String carYear = null;
-        for (int i = 0; i < detailNameList.size(); i++) {
-            String detailNameText = detailNameList.get(i).getText();
-            if (detailNameText.contains("Rok produkcji")) {
-                carYear = detailNameList.get(i).getText().substring(14, 18);
-            }
-        }
-        return carYear;
+        return productionYear.getText();
     }
 
+
     public String getCarDamageStatus() {
-        String carDamage = null;
-        for (int i = 0; i < detailNameList.size(); i++) {
-            String detailNameText = detailNameList.get(i).getText();
-            if (detailNameText.contains("Uszkodzony")) {
-                carDamage = detailNameList.get(i).getText().substring(9, 13);
+
+        for (int i = 0; i < detailsNameList.size(); i++) {
+            if (detailsNameList.get(i).getText().contains("Uszkodzony")) {
+                carDamage = detailsValueList.get(i).getText();
             } else System.out.println("No car damage information");
-            break;
         }
         return carDamage;
     }
@@ -82,10 +82,6 @@ public class OfferPO extends BasePO {
     public String getOfferTitle() {
         waitForWebElementToAppear(offerTitle);
         return offerTitle.getText();
-    }
-
-    public void closeAlert() {
-        driver.switchTo().alert().dismiss();
     }
 
 

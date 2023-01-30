@@ -36,8 +36,7 @@ public class SearchTests extends TestBase {
 
         landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
-        landingPagePO.selectCarProductionYearFrom(input.get("yearFrom"));
-//        landingPagePO.selectCarProductionYearTo(input.get("yearTo"));
+        landingPagePO.selectCarProductionYearFromNewestCars(input.get("yearFrom"));
         SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
         OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
         String carProductionYearText = offerPO.getCarProductionYear();

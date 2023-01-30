@@ -50,8 +50,8 @@ public class AdvancedSearchPO extends BasePO {
 
     public void goToCarStatusSearch() {
         waitForElementToBeClickable(carStatusButton);
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].scrollIntoView(false)", carStatusButton);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("window.scrollBy(0,250)", "");
         carStatusButton.click();
     }
 

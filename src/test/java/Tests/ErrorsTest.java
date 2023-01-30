@@ -20,9 +20,9 @@ public class ErrorsTest extends TestBase {
         landingPagePO.cookiesAccept();
         landingPagePO.selectCarProductionYearFrom(input.get("yearFrom"));
         landingPagePO.selectCarProductionYearTo(input.get("yearTo"));
-        Boolean errorDisplay = landingPagePO.checkIfErrorSymbolIsDisplayed();
+        Boolean yearFrom = landingPagePO.checkIfYearFromWindowIsEmpty();
 
-        Assert.assertEquals(Boolean.TRUE, errorDisplay);
+        Assert.assertEquals(yearFrom, Boolean.TRUE);
 
     }
 

@@ -56,15 +56,11 @@ public class LandingPagePO extends BasePO {
     @FindBy(css = "a[data-testid='usermenu-link-login']")
     WebElement loginButton;
 
-    @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[1]/div/div")
-    WebElement errorSymbol;
 
 
 
-
-
-    public Boolean checkIfErrorSymbolIsDisplayed(){
-        return errorSymbol.isDisplayed();
+    public Boolean checkIfYearFromWindowIsEmpty(){
+        return productionYearFromWindow.getAttribute("value").isEmpty();
     }
 
 
@@ -96,12 +92,19 @@ public class LandingPagePO extends BasePO {
         selectedCarModel.click();
     }
 
+    public void selectCarProductionYearFromNewestCars(String yearFrom) {
+        productionYearFromWindow.sendKeys(yearFrom);
+    }
+
+
     public void selectCarProductionYearFrom(String yearFrom) {
         productionYearFromWindow.sendKeys(yearFrom);
-//        productionYearFromOnList.click();
+        waitForElementToBeClickable(productionYearFromOnList);
+        productionYearFromOnList.click();
     }
 
     public void selectCarProductionYearTo(String yearTo) {
+        waitForAttributeToBeNotEmpty(productionYearFromWindow);
         productionYearToWindow.sendKeys(yearTo);
         waitForElementToBeClickable(productionYearToOnList);
         productionYearToOnList.click();

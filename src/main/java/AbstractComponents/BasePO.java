@@ -2,8 +2,6 @@ package AbstractComponents;
 
 import PageObjects.LandingPagePO;
 import PageObjects.ObservedOffersPO;
-import freemarker.template.Template;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
 public class BasePO {
 
@@ -33,6 +30,15 @@ public class BasePO {
         wait.until(ExpectedConditions.elementToBeClickable(findBy));
     }
 
+    public void waitForAttributeToBeNotEmpty(WebElement findBy){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(findBy, "value"));
+    }
+
+    public void waitUntilElementDisappears(WebElement findBy){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOf(findBy));
+    }
 
 
 
