@@ -13,8 +13,8 @@ import java.util.List;
 public class ErrorsTest extends TestBase {
 
     //test 6
-    @Test(dataProvider = "getSearchLoginData")
-    public void setIncorrectCarPriceInSearchTest(HashMap<String, String> input) {
+    @Test(dataProvider = "getSearchData")
+    public void setIncorrectCarProductionYearInSearchTest(HashMap<String, String> input) {
 
         landingPagePO.goToLandingPageURL();
         landingPagePO.cookiesAccept();
@@ -69,7 +69,7 @@ public class ErrorsTest extends TestBase {
     }
 
     @DataProvider
-    public Object[][] getSearchLoginData() throws IOException {
+    public Object[][] getSearchData() throws IOException {
 
         List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "/src/test/java/Data/searchData.json");
         return new Object[][]{{data.get(1)}};

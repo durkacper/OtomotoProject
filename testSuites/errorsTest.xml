@@ -8,7 +8,7 @@
         <classes>
             <class name="Tests.ErrorsTest">
                 <methods>
-                    <include name="setIncorrectCarPriceInSearchTest"/>
+                    <include name="setIncorrectCarProductionYearInSearchTest"/>
                     <include name="loginWithInvalidCredentialsTest"/>
                     <include name="intentionalFailTest"/>
                 </methods>

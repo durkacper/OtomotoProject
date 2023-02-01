@@ -1,0 +1,59 @@
+This is a text document presenting a description of test cases.
+
+Test 1
+GIVEN the landing page is open
+WHEN select the car brand and car model
+AND search for the results
+AND open a random offer from the results list
+THEN opened offer title contains car brand and car model from search
+
+
+Test 2
+GIVEN the landing page is open
+WHEN select the car production year from
+AND search for the results
+AND open a random offer from the results list
+THEN the car production year in the opened offer is equal to production year from search
+
+
+Test 3
+GIVEN the landing page is open
+WHEN go to the advanced search
+AND select the damaged car radio button
+AND search for the results
+AND open a random offer from the results list
+THEN the car damage information in the opened offer is equal to damage information from search
+
+
+Test 4
+GIVEN the landing page is open
+WHEN go to the login page
+AND enter the valid login and password and hit login button
+THEN the test user is successfully logged in
+
+
+Test 5
+GIVEN the landing page is open
+WHEN go to the login page
+AND enter the login and password and hit login button
+AND navigate back to the landing page
+AND search for results with no restrictions
+AND open a random offer from the results list
+AND get the offer ID number and add the offer to favorites
+AND navigate to the observed offers page and open the newest offer
+AND get the offer ID number
+THEN both offer IDs are equal
+
+
+Test 6
+GIVEN the landing page is open
+WHEN select the car production year from and year to (year from > year to)
+THEN the car production year from box is deleted automatically
+
+
+Test 7
+GIVEN the landing page is open
+WHEN go to the login page
+AND enter the invalid login and password and hit login button
+THEN the test user is not logged in
+AND the error message appears with expected information
