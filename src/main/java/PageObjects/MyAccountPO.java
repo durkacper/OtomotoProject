@@ -15,7 +15,4 @@ public class MyAccountPO extends BasePO {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
-
-
 }

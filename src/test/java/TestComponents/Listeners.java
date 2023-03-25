@@ -16,7 +16,6 @@ public class Listeners extends TestBase implements ITestListener {
     ExtentReports extentReports = ExtentReporterNG.getReportObject();
     ThreadLocal<ExtentTest> extentTestThreadLocal = new ThreadLocal<ExtentTest>();
 
-
     @Override
     public void onTestStart(ITestResult result) {
         test = extentReports.createTest(result.getMethod().getMethodName());
@@ -31,7 +30,6 @@ public class Listeners extends TestBase implements ITestListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         String filePath = null;
         try {
             filePath = getScreenshot(result.getMethod().getMethodName(), driver);
@@ -40,7 +38,6 @@ public class Listeners extends TestBase implements ITestListener {
         }
         extentTestThreadLocal.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
     }
-
 
     @Override
     public void onFinish(ITestContext context) {

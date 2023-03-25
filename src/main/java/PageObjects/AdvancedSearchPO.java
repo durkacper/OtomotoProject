@@ -28,16 +28,15 @@ public class AdvancedSearchPO extends BasePO {
     @FindBy(xpath = "//footer/button[2]")
     WebElement showResultsButton;
 
-
-    public void selectDamageRadioButton(String damageOption) {
+    public AdvancedSearchPO selectDamageRadioButton(String damageOption) {
         for (int i = 0; i < damageRadioButtonsList.size(); i++) {
             String damageRadioButtonText = damageRadioButtonsList.get(i).getText();
             if (damageRadioButtonText.equals(damageOption)) {
                 damageRadioButtonsList.get(i).click();
             }
         }
+        return this;
     }
-
 
     public SearchResultsPO goToResults() throws InterruptedException {
         waitForElementToBeClickable(showResultsButton);
@@ -47,13 +46,11 @@ public class AdvancedSearchPO extends BasePO {
         return searchResultsPO;
     }
 
-
-    public void goToCarStatusSearch() {
+    public AdvancedSearchPO goToCarStatusSearch() {
         waitForElementToBeClickable(carStatusButton);
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,250)", "");
         carStatusButton.click();
+        return this;
     }
-
-
 }

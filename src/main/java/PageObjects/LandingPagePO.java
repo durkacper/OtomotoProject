@@ -11,13 +11,11 @@ public class LandingPagePO extends BasePO {
 
     WebDriver driver;
 
-
     public LandingPagePO(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
 
     @FindBy(xpath = "//form/div/div[3]/div/div/div/input")
     WebElement carModelWindow;
@@ -56,58 +54,58 @@ public class LandingPagePO extends BasePO {
     @FindBy(css = "a[data-testid='usermenu-link-login']")
     WebElement loginButton;
 
-
-
-
-    public Boolean checkIfYearFromWindowIsEmpty(){
+    public Boolean checkIfYearFromWindowIsEmpty() {
         return productionYearFromWindow.getAttribute("value").isEmpty();
     }
 
-
-    public LoginPO goToLoginPage(){
+    public LoginPO goToLoginPage() {
         loginButton.click();
         LoginPO loginPO = new LoginPO(driver);
         return loginPO;
     }
 
-
-    public AdvancedSearchPO goToAdvancedSearch(){
+    public AdvancedSearchPO goToAdvancedSearch() {
         advancedSearchButton.click();
         AdvancedSearchPO advancedSearchPO = new AdvancedSearchPO(driver);
         return advancedSearchPO;
     }
 
-    public void cookiesAccept() {
+    public LandingPagePO cookiesAccept() {
         waitForWebElementToAppear(cookiesAcceptButton);
         cookiesAcceptButton.click();
+        return this;
     }
 
-    public void selectCarBrand(String carBrand) {
+    public LandingPagePO selectCarBrand(String carBrand) {
         carBrandWindow.sendKeys(carBrand);
         selectedCarBrand.click();
+        return this;
     }
 
-    public void selectCarModel(String carModel) {
+    public LandingPagePO selectCarModel(String carModel) {
         carModelWindow.sendKeys(carModel);
         selectedCarModel.click();
+        return this;
     }
 
-    public void selectCarProductionYearFromNewestCars(String yearFrom) {
+    public LandingPagePO selectCarProductionYearFromNewestCars(String yearFrom) {
         productionYearFromWindow.sendKeys(yearFrom);
+        return this;
     }
 
-
-    public void selectCarProductionYearFrom(String yearFrom) {
+    public LandingPagePO selectCarProductionYearFrom(String yearFrom) {
         productionYearFromWindow.sendKeys(yearFrom);
         waitForElementToBeClickable(productionYearFromOnList);
         productionYearFromOnList.click();
+        return this;
     }
 
-    public void selectCarProductionYearTo(String yearTo) {
+    public LandingPagePO selectCarProductionYearTo(String yearTo) {
         waitForAttributeToBeNotEmpty(productionYearFromWindow);
         productionYearToWindow.sendKeys(yearTo);
         waitForElementToBeClickable(productionYearToOnList);
         productionYearToOnList.click();
+        return this;
     }
 
     public SearchResultsPO searchForOffers() {
@@ -117,9 +115,8 @@ public class LandingPagePO extends BasePO {
         return searchResultsPO;
     }
 
-    public void goToLandingPageURL() {
+    public LandingPagePO goToLandingPageURL() {
         driver.get("https://www.otomoto.pl/");
+        return this;
     }
-
-
 }

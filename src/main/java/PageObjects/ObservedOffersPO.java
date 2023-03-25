@@ -16,15 +16,12 @@ public class ObservedOffersPO extends BasePO {
         this.driver = driver;
     }
 
-
     @FindBy(css = "a[data-testid='fav-ad-card']")
     WebElement observedOfferIcon;
 
-
-    public OfferPO openObservedOffer(){
+    public OfferPO openObservedOffer() {
         observedOfferIcon.click();
         OfferPO offerPO = new OfferPO(driver);
         return offerPO;
     }
-
 }

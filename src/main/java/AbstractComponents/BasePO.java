@@ -20,28 +20,6 @@ public class BasePO {
         PageFactory.initElements(driver, this);
     }
 
-    public void waitForWebElementToAppear(WebElement findBy) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(findBy));
-    }
-
-    public void waitForElementToBeClickable(WebElement findBy){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(findBy));
-    }
-
-    public void waitForAttributeToBeNotEmpty(WebElement findBy){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.attributeToBeNotEmpty(findBy, "value"));
-    }
-
-    public void waitUntilElementDisappears(WebElement findBy){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.invisibilityOf(findBy));
-    }
-
-
-
     @FindBy(css = "#topLoginLink")
     WebElement loggedUserName;
 
@@ -51,24 +29,41 @@ public class BasePO {
     @FindBy(css = "#observed-counter")
     WebElement observedButton;
 
+    public void waitForWebElementToAppear(WebElement findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(findBy));
+    }
 
-    public ObservedOffersPO goToObservedOffersPage(){
+    public void waitForElementToBeClickable(WebElement findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(findBy));
+    }
+
+    public void waitForAttributeToBeNotEmpty(WebElement findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(findBy, "value"));
+    }
+
+    public void waitUntilElementDisappears(WebElement findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOf(findBy));
+    }
+
+    public ObservedOffersPO goToObservedOffersPage() {
         observedButton.click();
         ObservedOffersPO observedOffersPO = new ObservedOffersPO(driver);
         return observedOffersPO;
     }
 
-    public LandingPagePO goToLandingPage(){
+    public LandingPagePO goToLandingPage() {
         waitForElementToBeClickable(topOtomotoLogo);
         topOtomotoLogo.click();
         LandingPagePO landingPagePO = new LandingPagePO(driver);
         return landingPagePO;
     }
 
-    public String getLoggedUserNameText(){
+    public String getLoggedUserNameText() {
         waitForWebElementToAppear(loggedUserName);
         return loggedUserName.getText();
     }
-
-
 }

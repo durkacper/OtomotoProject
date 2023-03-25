@@ -15,32 +15,28 @@ public class AddToFavouritesTest extends TestBase {
     //test5
     @Test(dataProvider = "getLoginData")
     public void addOfferToFavouritesTest(HashMap<String, String> input) {
-
-        landingPagePO.goToLandingPageURL();
-        landingPagePO.cookiesAccept();
+        landingPagePO.goToLandingPageURL()
+                .cookiesAccept();
         LoginPO loginPO = landingPagePO.goToLoginPage();
-        loginPO.enterEmail(input.get("login"));
-        loginPO.enterPassword(input.get("pass"));
+        loginPO.enterEmail(input.get("login"))
+                .enterPassword(input.get("pass"));
         MyAccountPO myAccountPO = loginPO.pressLoginButton();
         myAccountPO.goToLandingPage();
         SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
         OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
         String offerID1 = offerPO.getOfferID();
-        offerPO.addToFavorites();
-        offerPO.closeFavoriteModal();
+        offerPO.addToFavorites()
+                .closeFavoriteModal();
         ObservedOffersPO observedOffersPO = offerPO.goToObservedOffersPage();
         observedOffersPO.openObservedOffer();
         String offerID2 = offerPO.getOfferID();
 
         Assert.assertEquals(offerID2, offerID1);
-
     }
 
     @DataProvider
     public Object[][] getLoginData() throws IOException {
-
         List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "/src/test/java/Data/loginData.json");
         return new Object[][]{{data.get(0)}};
     }
-
 }

@@ -10,7 +10,6 @@ public class ExtentReporterNG {
         ExtentSparkReporter reporter = new ExtentSparkReporter(path);
         reporter.config().setReportName("Otomoto Web Automation Results");
         reporter.config().setDocumentTitle("Test Results");
-
         ExtentReports extentReports = new ExtentReports();
         extentReports.attachReporter(reporter);
         extentReports.setSystemInfo("Tester", "Kacper");

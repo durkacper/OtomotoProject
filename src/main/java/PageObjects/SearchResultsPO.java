@@ -1,13 +1,11 @@
 package PageObjects;
 
 import AbstractComponents.BasePO;
-import freemarker.template.Template;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 import java.util.Random;
@@ -22,7 +20,6 @@ public class SearchResultsPO extends BasePO {
         this.driver = driver;
     }
 
-
     @FindBy(css = "article[data-testid='listing-ad']")
     List<WebElement> offersList;
 
@@ -32,9 +29,7 @@ public class SearchResultsPO extends BasePO {
     @FindBy(css = "div[data-testid='search-loading-indicator']")
     WebElement loadingSpinner;
 
-
     public OfferPO openRandomOfferInResults() {
-
         waitForWebElementToAppear(firstOffer);
         waitUntilElementDisappears(loadingSpinner);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -45,5 +40,4 @@ public class SearchResultsPO extends BasePO {
         OfferPO offerPO = new OfferPO(driver);
         return offerPO;
     }
-
 }

@@ -9,12 +9,12 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPO extends BasePO {
 
     WebDriver driver;
+
     public LoginPO(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
 
     @FindBy(css = "#current-email")
     WebElement emailWindow;
@@ -28,25 +28,24 @@ public class LoginPO extends BasePO {
     @FindBy(css = "p[data-testid='generic-error-message']")
     WebElement loginErrorMessage;
 
-
-    public String getLoginErrorMessageText(){
+    public String getLoginErrorMessageText() {
         waitForWebElementToAppear(loginErrorMessage);
         return loginErrorMessage.getText();
     }
 
-    public void enterEmail(String email){
+    public LoginPO enterEmail(String email) {
         emailWindow.sendKeys(email);
+        return this;
     }
 
-    public void enterPassword(String pass){
+    public LoginPO enterPassword(String pass) {
         passwordWindow.sendKeys(pass);
+        return this;
     }
 
-    public MyAccountPO pressLoginButton(){
+    public MyAccountPO pressLoginButton() {
         loginButton.click();
         MyAccountPO myAccountPO = new MyAccountPO(driver);
         return myAccountPO;
     }
-
-
 }

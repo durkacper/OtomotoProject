@@ -4,7 +4,6 @@ import AbstractComponents.BasePO;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -21,7 +20,6 @@ public class OfferPO extends BasePO {
         this.driver = driver;
     }
 
-
     @FindBy(css = "span.offer-title")
     WebElement offerTitle;
 
@@ -37,39 +35,34 @@ public class OfferPO extends BasePO {
     @FindBy(xpath = "//div[@class='offer-summary']/span[2]/span[1]")
     WebElement productionYear;
 
-
     @FindBy(xpath = "//div[@class='offer-params with-vin']/ul[2]/li/span")
     List<WebElement> detailsNameList;
 
     @FindBy(xpath = "//div[@class='offer-params with-vin']/ul[2]/li/div")
     List<WebElement> detailsValueList;
 
-
     public String getOfferID() {
         waitForWebElementToAppear(offerID);
         return offerID.getText();
     }
 
-
-    public void closeFavoriteModal() {
+    public OfferPO closeFavoriteModal() {
         waitForElementToBeClickable(closeFavoriteModalButton);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click()", closeFavoriteModalButton);
+        return this;
     }
 
-
-    public void addToFavorites() {
+    public OfferPO addToFavorites() {
         addToFavoritesButton.click();
+        return this;
     }
-
 
     public String getCarProductionYear() {
         return productionYear.getText();
     }
 
-
     public String getCarDamageStatus() {
-
         for (int i = 0; i < detailsNameList.size(); i++) {
             if (detailsNameList.get(i).getText().contains("Uszkodzony")) {
                 carDamage = detailsValueList.get(i).getText();
@@ -78,11 +71,8 @@ public class OfferPO extends BasePO {
         return carDamage;
     }
 
-
     public String getOfferTitle() {
         waitForWebElementToAppear(offerTitle);
         return offerTitle.getText();
     }
-
-
 }

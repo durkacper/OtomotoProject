@@ -24,36 +24,15 @@ public class TestBase {
     public WebDriver driver;
     public LandingPagePO landingPagePO;
 
-
     public WebDriver initializeDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         return driver;
     }
-
-    public List<HashMap<String, String>> getJsonDataToMap(String FilePath) throws IOException {
-
-        String jsonContent = FileUtils.readFileToString(new File(FilePath), StandardCharsets.UTF_8);
-
-        ObjectMapper mapper = new ObjectMapper();
-        List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
-        });
-
-        return data;
-    }
-
-
-    public String  getScreenshot(String testCaseName, WebDriver driver) throws IOException {
-        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
-        File file = new File(System.getProperty("user.dir") + "/reports/" + testCaseName +".png");
-        FileUtils.copyFile(source, file);
-        return System.getProperty("user.dir") + "/reports/" + testCaseName + ".png";
-    }
-
 
     @BeforeMethod
     public LandingPagePO launchApplication() {
@@ -63,9 +42,24 @@ public class TestBase {
         return landingPagePO;
     }
 
+    public List<HashMap<String, String>> getJsonDataToMap(String FilePath) throws IOException {
+        String jsonContent = FileUtils.readFileToString(new File(FilePath), StandardCharsets.UTF_8);
+        ObjectMapper mapper = new ObjectMapper();
+        List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
+        });
+        return data;
+    }
+
+    public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        File file = new File(System.getProperty("user.dir") + "/reports/" + testCaseName + ".png");
+        FileUtils.copyFile(source, file);
+        return System.getProperty("user.dir") + "/reports/" + testCaseName + ".png";
+    }
+
 //    @AfterMethod(alwaysRun = true)
 //    public void tearDown() {
 //        driver.close();
 //    }
-
 }

@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7a7f9f2-5bc0-43cc-8177-2421006b7946" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/testPlan.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AbstractComponents/BasePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AbstractComponents/BasePO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/AdvancedSearchPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/AdvancedSearchPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/LandingPagePO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/LoginPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/LoginPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/MyAccountPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/MyAccountPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/ObservedOffersPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/ObservedOffersPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/OfferPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/OfferPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjects/SearchResultsPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjects/SearchResultsPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/ExtentReporterNG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/ExtentReporterNG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Data/DataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Data/DataReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestComponents/Listeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestComponents/Listeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestComponents/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestComponents/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/AddToFavouritesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/ErrorsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/ErrorsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testSuites/errorsTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/errorsTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SearchTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/durk/Desktop/OtomotoProject"
+    "last_opened_file_path": "C:/Users/durk/Desktop/SeleniumMagentoSoftwaretestingboard"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -70,20 +83,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/durk/Desktop/OtomotoProject/testSuites/allTestParallel.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ErrorsTest.intentionalFailTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/allTestParallel.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ErrorsTest" />
+      <option name="METHOD_NAME" value="intentionalFailTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/durk/Desktop/OtomotoProject/testSuites/allTest_2.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ErrorsTest.loginWithInvalidCredentialsTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/allTest_2.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ErrorsTest" />
+      <option name="METHOD_NAME" value="loginWithInvalidCredentialsTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -108,7 +137,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchTests.searchCarByProductionYear" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.loginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="OtomotoProject" />
       <extension name="coverage">
         <pattern>
@@ -117,8 +146,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.SearchTests" />
-      <option name="METHOD_NAME" value="searchCarByProductionYear" />
+      <option name="MAIN_CLASS_NAME" value="Tests.LoginTest" />
+      <option name="METHOD_NAME" value="loginTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -129,10 +158,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.ErrorsTest.setIncorrectCarProductionYearInSearchTest" />
-        <item itemvalue="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/allTestParallel.xml" />
-        <item itemvalue="TestNG.SearchTests.searchCarByProductionYear" />
+        <item itemvalue="TestNG.LoginTest.loginTest" />
+        <item itemvalue="TestNG.ErrorsTest.loginWithInvalidCredentialsTest" />
+        <item itemvalue="TestNG.ErrorsTest.intentionalFailTest" />
         <item itemvalue="TestNG.AddToFavouritesTest.addOfferToFavouritesTest" />
-        <item itemvalue="TestNG.C:/Users/durk/Desktop/OtomotoProject/testSuites/allTest_2.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675107610412</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="commit">
+      <created>1675256780610</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1675256780610</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
