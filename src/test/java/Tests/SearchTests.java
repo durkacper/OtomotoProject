@@ -2,7 +2,6 @@ package Tests;
 
 import PageObjects.*;
 import TestComponents.TestBase;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -20,8 +19,8 @@ public class SearchTests extends TestBase {
                 .cookiesAccept()
                 .selectCarBrand(input.get("brand"))
                 .selectCarModel(input.get("model"));
-        SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
-        OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
+        SearchResultsPage searchResultsPO = landingPagePO.searchForOffers();
+        OfferPage offerPO = searchResultsPO.openRandomOfferInResults();
         String offerTitleText = offerPO.getOfferTitle();
 
         Assert.assertTrue(offerTitleText.contains("Audi " + "RS6"));
@@ -33,8 +32,8 @@ public class SearchTests extends TestBase {
         landingPagePO.goToLandingPageURL()
                 .cookiesAccept()
                 .selectCarProductionYearFromNewestCars(input.get("yearFrom"));
-        SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
-        OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
+        SearchResultsPage searchResultsPO = landingPagePO.searchForOffers();
+        OfferPage offerPO = searchResultsPO.openRandomOfferInResults();
         String carProductionYearText = offerPO.getCarProductionYear();
 
         Assert.assertEquals(carProductionYearText, "2023");
@@ -45,11 +44,11 @@ public class SearchTests extends TestBase {
     public void advancedSearchForDamagedCars(HashMap<String, String> input) throws InterruptedException {
         landingPagePO.goToLandingPageURL()
                 .cookiesAccept();
-        AdvancedSearchPO advancedSearchPO = landingPagePO.goToAdvancedSearch();
+        AdvancedSearchPage advancedSearchPO = landingPagePO.goToAdvancedSearch();
         advancedSearchPO.goToCarStatusSearch()
                 .selectDamageRadioButton(input.get("damageOption"));
-        SearchResultsPO searchResultsPO = advancedSearchPO.goToResults();
-        OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
+        SearchResultsPage searchResultsPO = advancedSearchPO.goToResults();
+        OfferPage offerPO = searchResultsPO.openRandomOfferInResults();
         offerPO.getCarDamageStatus();
         String carDamageStatusText = offerPO.getCarDamageStatus();
 

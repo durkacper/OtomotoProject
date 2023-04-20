@@ -17,17 +17,17 @@ public class AddToFavouritesTest extends TestBase {
     public void addOfferToFavouritesTest(HashMap<String, String> input) {
         landingPagePO.goToLandingPageURL()
                 .cookiesAccept();
-        LoginPO loginPO = landingPagePO.goToLoginPage();
+        LoginPage loginPO = landingPagePO.goToLoginPage();
         loginPO.enterEmail(input.get("login"))
                 .enterPassword(input.get("pass"));
-        MyAccountPO myAccountPO = loginPO.pressLoginButton();
+        MyAccountPage myAccountPO = loginPO.pressLoginButton();
         myAccountPO.goToLandingPage();
-        SearchResultsPO searchResultsPO = landingPagePO.searchForOffers();
-        OfferPO offerPO = searchResultsPO.openRandomOfferInResults();
+        SearchResultsPage searchResultsPO = landingPagePO.searchForOffers();
+        OfferPage offerPO = searchResultsPO.openRandomOfferInResults();
         String offerID1 = offerPO.getOfferID();
         offerPO.addToFavorites()
                 .closeFavoriteModal();
-        ObservedOffersPO observedOffersPO = offerPO.goToObservedOffersPage();
+        ObservedOffersPage observedOffersPO = offerPO.goToObservedOffersPage();
         observedOffersPO.openObservedOffer();
         String offerID2 = offerPO.getOfferID();
 

@@ -1,17 +1,16 @@
 package PageObjects;
 
-import AbstractComponents.BasePO;
-import com.beust.ah.A;
+import AbstractComponents.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LandingPagePO extends BasePO {
+public class LandingPage extends BasePage {
 
     WebDriver driver;
 
-    public LandingPagePO(WebDriver driver) {
+    public LandingPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -26,7 +25,6 @@ public class LandingPagePO extends BasePO {
     @FindBy(id = "onetrust-accept-btn-handler")
     WebElement cookiesAcceptButton;
 
-    //    @FindBy(css = "li:nth-child(2) div:nth-child(1) div:nth-child(1) div:nth-child(1) div:nth-child(1) span:nth-child(1)")
     @FindBy(xpath = "//div[@data-testid='dropdown']/ul/li[2]")
     WebElement selectedCarBrand;
 
@@ -51,56 +49,56 @@ public class LandingPagePO extends BasePO {
     @FindBy(css = "button[data-testid='advanced-search-link']")
     WebElement advancedSearchButton;
 
-    @FindBy(css = "a[data-testid='usermenu-link-login']")
+    @FindBy(css = "button[data-testid='usermenu-link-login']")
     WebElement loginButton;
 
     public Boolean checkIfYearFromWindowIsEmpty() {
         return productionYearFromWindow.getAttribute("value").isEmpty();
     }
 
-    public LoginPO goToLoginPage() {
+    public LoginPage goToLoginPage() {
         loginButton.click();
-        LoginPO loginPO = new LoginPO(driver);
+        LoginPage loginPO = new LoginPage(driver);
         return loginPO;
     }
 
-    public AdvancedSearchPO goToAdvancedSearch() {
+    public AdvancedSearchPage goToAdvancedSearch() {
         advancedSearchButton.click();
-        AdvancedSearchPO advancedSearchPO = new AdvancedSearchPO(driver);
+        AdvancedSearchPage advancedSearchPO = new AdvancedSearchPage(driver);
         return advancedSearchPO;
     }
 
-    public LandingPagePO cookiesAccept() {
+    public LandingPage cookiesAccept() {
         waitForWebElementToAppear(cookiesAcceptButton);
         cookiesAcceptButton.click();
         return this;
     }
 
-    public LandingPagePO selectCarBrand(String carBrand) {
+    public LandingPage selectCarBrand(String carBrand) {
         carBrandWindow.sendKeys(carBrand);
         selectedCarBrand.click();
         return this;
     }
 
-    public LandingPagePO selectCarModel(String carModel) {
+    public LandingPage selectCarModel(String carModel) {
         carModelWindow.sendKeys(carModel);
         selectedCarModel.click();
         return this;
     }
 
-    public LandingPagePO selectCarProductionYearFromNewestCars(String yearFrom) {
+    public LandingPage selectCarProductionYearFromNewestCars(String yearFrom) {
         productionYearFromWindow.sendKeys(yearFrom);
         return this;
     }
 
-    public LandingPagePO selectCarProductionYearFrom(String yearFrom) {
+    public LandingPage selectCarProductionYearFrom(String yearFrom) {
         productionYearFromWindow.sendKeys(yearFrom);
         waitForElementToBeClickable(productionYearFromOnList);
         productionYearFromOnList.click();
         return this;
     }
 
-    public LandingPagePO selectCarProductionYearTo(String yearTo) {
+    public LandingPage selectCarProductionYearTo(String yearTo) {
         waitForAttributeToBeNotEmpty(productionYearFromWindow);
         productionYearToWindow.sendKeys(yearTo);
         waitForElementToBeClickable(productionYearToOnList);
@@ -108,14 +106,14 @@ public class LandingPagePO extends BasePO {
         return this;
     }
 
-    public SearchResultsPO searchForOffers() {
+    public SearchResultsPage searchForOffers() {
         waitForElementToBeClickable(showOffersButton);
         showOffersButton.click();
-        SearchResultsPO searchResultsPO = new SearchResultsPO(driver);
+        SearchResultsPage searchResultsPO = new SearchResultsPage(driver);
         return searchResultsPO;
     }
 
-    public LandingPagePO goToLandingPageURL() {
+    public LandingPage goToLandingPageURL() {
         driver.get("https://www.otomoto.pl/");
         return this;
     }

@@ -1,7 +1,7 @@
 package AbstractComponents;
 
-import PageObjects.LandingPagePO;
-import PageObjects.ObservedOffersPO;
+import PageObjects.LandingPage;
+import PageObjects.ObservedOffersPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,11 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BasePO {
+public class BasePage {
 
     WebDriver driver;
 
-    public BasePO(WebDriver driver) {
+    public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -49,16 +49,16 @@ public class BasePO {
         wait.until(ExpectedConditions.invisibilityOf(findBy));
     }
 
-    public ObservedOffersPO goToObservedOffersPage() {
+    public ObservedOffersPage goToObservedOffersPage() {
         observedButton.click();
-        ObservedOffersPO observedOffersPO = new ObservedOffersPO(driver);
+        ObservedOffersPage observedOffersPO = new ObservedOffersPage(driver);
         return observedOffersPO;
     }
 
-    public LandingPagePO goToLandingPage() {
+    public LandingPage goToLandingPage() {
         waitForElementToBeClickable(topOtomotoLogo);
         topOtomotoLogo.click();
-        LandingPagePO landingPagePO = new LandingPagePO(driver);
+        LandingPage landingPagePO = new LandingPage(driver);
         return landingPagePO;
     }
 

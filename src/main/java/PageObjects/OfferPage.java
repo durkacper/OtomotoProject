@@ -1,6 +1,6 @@
 package PageObjects;
 
-import AbstractComponents.BasePO;
+import AbstractComponents.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,12 +9,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class OfferPO extends BasePO {
+public class OfferPage extends BasePage {
 
     WebDriver driver;
     public String carDamage;
 
-    public OfferPO(WebDriver driver) {
+    public OfferPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -46,14 +46,14 @@ public class OfferPO extends BasePO {
         return offerID.getText();
     }
 
-    public OfferPO closeFavoriteModal() {
+    public OfferPage closeFavoriteModal() {
         waitForElementToBeClickable(closeFavoriteModalButton);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click()", closeFavoriteModalButton);
         return this;
     }
 
-    public OfferPO addToFavorites() {
+    public OfferPage addToFavorites() {
         addToFavoritesButton.click();
         return this;
     }

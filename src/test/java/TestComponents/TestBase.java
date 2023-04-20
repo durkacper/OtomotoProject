@@ -1,6 +1,6 @@
 package TestComponents;
 
-import PageObjects.LandingPagePO;
+import PageObjects.LandingPage;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -10,7 +10,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
@@ -22,7 +21,7 @@ import java.util.List;
 public class TestBase {
 
     public WebDriver driver;
-    public LandingPagePO landingPagePO;
+    public LandingPage landingPagePO;
 
     public WebDriver initializeDriver() {
         WebDriverManager.chromedriver().setup();
@@ -35,9 +34,9 @@ public class TestBase {
     }
 
     @BeforeMethod
-    public LandingPagePO launchApplication() {
+    public LandingPage launchApplication() {
         driver = initializeDriver();
-        landingPagePO = new LandingPagePO(driver);
+        landingPagePO = new LandingPage(driver);
         landingPagePO.goToLandingPageURL();
         return landingPagePO;
     }

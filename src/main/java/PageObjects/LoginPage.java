@@ -1,16 +1,16 @@
 package PageObjects;
 
-import AbstractComponents.BasePO;
+import AbstractComponents.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPO extends BasePO {
+public class LoginPage extends BasePage {
 
     WebDriver driver;
 
-    public LoginPO(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -33,19 +33,20 @@ public class LoginPO extends BasePO {
         return loginErrorMessage.getText();
     }
 
-    public LoginPO enterEmail(String email) {
+    public LoginPage enterEmail(String email) {
+        waitForWebElementToAppear(emailWindow);
         emailWindow.sendKeys(email);
         return this;
     }
 
-    public LoginPO enterPassword(String pass) {
+    public LoginPage enterPassword(String pass) {
         passwordWindow.sendKeys(pass);
         return this;
     }
 
-    public MyAccountPO pressLoginButton() {
+    public MyAccountPage pressLoginButton() {
         loginButton.click();
-        MyAccountPO myAccountPO = new MyAccountPO(driver);
+        MyAccountPage myAccountPO = new MyAccountPage(driver);
         return myAccountPO;
     }
 }

@@ -1,6 +1,6 @@
 package PageObjects;
 
-import AbstractComponents.BasePO;
+import AbstractComponents.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,11 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 import java.util.Random;
 
-public class SearchResultsPO extends BasePO {
+public class SearchResultsPage extends BasePage {
 
     WebDriver driver;
 
-    public SearchResultsPO(WebDriver driver) {
+    public SearchResultsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -29,7 +29,7 @@ public class SearchResultsPO extends BasePO {
     @FindBy(css = "div[data-testid='search-loading-indicator']")
     WebElement loadingSpinner;
 
-    public OfferPO openRandomOfferInResults() {
+    public OfferPage openRandomOfferInResults() {
         waitForWebElementToAppear(firstOffer);
         waitUntilElementDisappears(loadingSpinner);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -37,7 +37,7 @@ public class SearchResultsPO extends BasePO {
         Random random = new Random();
         int randomValue = random.nextInt(offersList.size());
         offersList.get(randomValue).click();
-        OfferPO offerPO = new OfferPO(driver);
+        OfferPage offerPO = new OfferPage(driver);
         return offerPO;
     }
 }

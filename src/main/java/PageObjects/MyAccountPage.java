@@ -1,16 +1,14 @@
 package PageObjects;
 
-import AbstractComponents.BasePO;
+import AbstractComponents.BasePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MyAccountPO extends BasePO {
+public class MyAccountPage extends BasePage {
 
     WebDriver driver;
 
-    public MyAccountPO(WebDriver driver) {
+    public MyAccountPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         this.driver = driver;

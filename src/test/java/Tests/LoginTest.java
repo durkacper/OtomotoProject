@@ -1,9 +1,8 @@
 package Tests;
 
-import PageObjects.LoginPO;
-import PageObjects.MyAccountPO;
+import PageObjects.LoginPage;
+import PageObjects.MyAccountPage;
 import TestComponents.TestBase;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -19,10 +18,10 @@ public class LoginTest extends TestBase {
     public void loginTest(HashMap<String, String> input) {
         landingPagePO.goToLandingPageURL()
                 .cookiesAccept();
-        LoginPO loginPO = landingPagePO.goToLoginPage();
+        LoginPage loginPO = landingPagePO.goToLoginPage();
         loginPO.enterEmail(input.get("login"))
                 .enterPassword(input.get("pass"));
-        MyAccountPO myAccountPO = loginPO.pressLoginButton();
+        MyAccountPage myAccountPO = loginPO.pressLoginButton();
         String loggedUserNameText = myAccountPO.getLoggedUserNameText();
 
         Assert.assertEquals(loggedUserNameText, "otomototestuser");

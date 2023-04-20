@@ -1,6 +1,6 @@
 package Tests;
 
-import PageObjects.LoginPO;
+import PageObjects.LoginPage;
 import TestComponents.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -30,7 +30,7 @@ public class ErrorsTest extends TestBase {
     public void loginWithInvalidCredentialsTest(HashMap<String, String> input) {
         landingPagePO.goToLandingPageURL()
                 .cookiesAccept();
-        LoginPO loginPO = landingPagePO.goToLoginPage();
+        LoginPage loginPO = landingPagePO.goToLoginPage();
         loginPO.enterEmail(input.get("invalidLogin"))
                 .enterPassword(input.get("invalidPass"))
                 .pressLoginButton();
@@ -44,7 +44,7 @@ public class ErrorsTest extends TestBase {
     public void intentionalFailTest(HashMap<String, String> input) {
         landingPagePO.goToLandingPageURL()
                 .cookiesAccept();
-        LoginPO loginPO = landingPagePO.goToLoginPage();
+        LoginPage loginPO = landingPagePO.goToLoginPage();
         loginPO.enterEmail(input.get("invalidLogin"))
                 .enterPassword(input.get("invalidPass"))
                 .pressLoginButton();
