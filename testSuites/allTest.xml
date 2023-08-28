@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="All Test Suite">
+    <listeners>
+        <listener class-name="TestComponents.Listeners"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="All Tests">
+        <classes>
+            <class name="Tests.AddToFavouritesTest">
+                <methods>
+                    <include name="addOfferToFavouritesTest"/>
+                </methods>
+            </class>
+            <class name="Tests.ErrorsTest">
+                <methods>
+                    <include name="setIncorrectCarProductionYearInSearchTest"/>
+                    <include name="loginWithInvalidCredentialsTest"/>
+                    <include name="intentionalFailTest"/>
+                </methods>
+            </class>
+            <class name="Tests.LoginTest">
+                <methods>
+                    <include name="loginTest"/>
+                </methods>
+            </class>
+            <class name="Tests.SearchTests">
+                <methods>
+                    <include name="searchCarByBrandAndModelTest"/>
+                    <include name="searchCarByProductionYear"/>
+                    <include name="advancedSearchForDamagedCars"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
