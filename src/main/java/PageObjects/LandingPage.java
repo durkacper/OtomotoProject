@@ -1,6 +1,7 @@
 package PageObjects;
 
 import AbstractComponents.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,7 +32,7 @@ public class LandingPage extends BasePage {
     @FindBy(xpath = "//div[@data-testid='dropdown']/ul/li")
     WebElement selectedCarModel;
 
-    @FindBy(css = "button[data-testid='submit-btn']")
+    @FindBy(xpath = "//button[@type='submit'][1]")
     WebElement showOffersButton;
 
     @FindBy(xpath = "//form/div/div[6]/fieldset/div/div[1]/div/input")
@@ -57,6 +58,7 @@ public class LandingPage extends BasePage {
     }
 
     public LoginPage goToLoginPage() {
+        waitForWebElementToAppear(loginButton);
         loginButton.click();
         LoginPage loginPO = new LoginPage(driver);
         return loginPO;
@@ -66,12 +68,6 @@ public class LandingPage extends BasePage {
         advancedSearchButton.click();
         AdvancedSearchPage advancedSearchPO = new AdvancedSearchPage(driver);
         return advancedSearchPO;
-    }
-
-    public LandingPage cookiesAccept() {
-        waitForWebElementToAppear(cookiesAcceptButton);
-        cookiesAcceptButton.click();
-        return this;
     }
 
     public LandingPage selectCarBrand(String carBrand) {
@@ -107,7 +103,7 @@ public class LandingPage extends BasePage {
     }
 
     public SearchResultsPage searchForOffers() {
-        waitForElementToBeClickable(showOffersButton);
+        waitForWebElementToAppear(showOffersButton);
         showOffersButton.click();
         SearchResultsPage searchResultsPO = new SearchResultsPage(driver);
         return searchResultsPO;
@@ -115,6 +111,8 @@ public class LandingPage extends BasePage {
 
     public LandingPage goToLandingPageURL() {
         driver.get("https://www.otomoto.pl/");
+        waitForWebElementToAppear(cookiesAcceptButton);
+        cookiesAcceptButton.click();
         return this;
     }
 }

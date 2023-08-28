@@ -37,7 +37,6 @@ public class TestBase {
     public LandingPage launchApplication() {
         driver = initializeDriver();
         landingPagePO = new LandingPage(driver);
-        landingPagePO.goToLandingPageURL();
         return landingPagePO;
     }
 

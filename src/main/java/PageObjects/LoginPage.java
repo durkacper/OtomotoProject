@@ -1,6 +1,7 @@
 package PageObjects;
 
 import AbstractComponents.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,13 +17,13 @@ public class LoginPage extends BasePage {
         this.driver = driver;
     }
 
-    @FindBy(css = "#current-email")
+    @FindBy(css = "input[name='username']")
     WebElement emailWindow;
 
-    @FindBy(css = "#current-password")
+    @FindBy(css = "input[name='password']")
     WebElement passwordWindow;
 
-    @FindBy(css = "button[data-testid='sign-in-button']")
+    @FindBy(css = "button[type='submit']")
     WebElement loginButton;
 
     @FindBy(css = "p[data-testid='generic-error-message']")
@@ -45,6 +46,8 @@ public class LoginPage extends BasePage {
     }
 
     public MyAccountPage pressLoginButton() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         loginButton.click();
         MyAccountPage myAccountPO = new MyAccountPage(driver);
         return myAccountPO;

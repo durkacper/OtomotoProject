@@ -46,11 +46,12 @@ public class OfferPage extends BasePage {
         return offerID.getText();
     }
 
-    public OfferPage closeFavoriteModal() {
+    public ObservedOffersPage closeFavoriteModal() {
         waitForElementToBeClickable(closeFavoriteModalButton);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click()", closeFavoriteModalButton);
-        return this;
+        ObservedOffersPage observedOffersPO = new ObservedOffersPage(driver);
+        return observedOffersPO;
     }
 
     public OfferPage addToFavorites() {
